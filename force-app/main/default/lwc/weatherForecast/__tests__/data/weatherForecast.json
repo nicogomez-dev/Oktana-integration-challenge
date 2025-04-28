@@ -1,0 +1,27 @@
+[
+    {
+        "day": "Monday",
+        "temperature": "25",
+        "description": "Sunny"
+    },
+    {
+        "day": "Tuesday",
+        "temperature": "26",
+        "description": "Thunderstorms"
+    },
+    {
+        "day": "Wednesday",
+        "temperature": "27",
+        "description": "Cloudy"
+    },
+    {
+        "day": "Thursday",
+        "temperature": "28",
+        "description": "Sunny"
+    },
+    {
+        "day": "Friday",
+        "temperature": "0",
+        "description": "Sunny"
+    }
+]

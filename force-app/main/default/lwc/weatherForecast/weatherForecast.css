@@ -1,0 +1,30 @@
+:host {
+    --slds-c-spinner-color-foreground: #0176D3;
+}
+.container{}
+
+.overlay-box {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* light semi-transparent white */
+    z-index: 10;
+    border-radius: 0.25rem; /* match lightning-card rounding if needed */
+}
+
+.light-blue-class {
+    background-color: var(--lwc-colorBackgroundHighlight);
+    color: var(--lwc-colorTextInverse);
+}
+.gray-class{
+    background-color: var(--lwc-colorBackgroundAlt);
+    color: var(--lwc-colorTextDefault);
+}
+.dark-gray-class{
+    background-color: var(--lwc-colorBackgroundAltInverse);
+    color: var(--lwc-colorTextInverse);
+}
+.invert-color {
+    color: var(--lwc-colorTextInverse);
+}

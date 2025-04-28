@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Find out the weather in our destinations">
+        <div class={cardClass}>
+            <lightning-combobox
+                name="location"
+                label=""
+                value={selectedLocation}
+                placeholder="Select a location"
+                options={locations}
+                onchange={handleChange}
+                identifier="location-combobox">
+            </lightning-combobox>
+            <template if:true={locationSelected}>
+                <c-weather-today selected-location={selectedLocation} ongotweather={handleGotWeather}></c-weather-today>
+                <c-weather-forecast selected-location={selectedLocation} todays-weather={currentWeather}></c-weather-forecast>
+            </template>
+        </div>
+    </lightning-card>
+</template>

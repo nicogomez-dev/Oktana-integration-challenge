@@ -1,0 +1,60 @@
+<template>
+    <div class={cardClass}>
+        <template if:true={weatherData}>
+            <div data-id="weather-today-data">
+                <p data-id="weather-description" class="slds-text-align_center slds-var-p-around_small slds-text-heading_large invert-color">
+                    Weather today in {weatherData.location}: {weatherData.description}
+                </p>
+                <div class="slds-grid slds-wrap slds-gutters" style="display: flex; align-items: center;">
+                    <!-- Weather Logo -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-4 slds-var-p-around_small slds-text-align_center" style="border-right: 3px solid rgba(0, 0, 0, .1);">
+                        <img src={weatherLogo} alt="today-weather" style="width: 40%;" />
+                    </div>
+
+                    <!-- Temp & Humidity -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-var-p-around_small" style="flex-direction: column;">
+                        <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+                            <!-- Temperature -->
+                            <div data-id="temp-data" class="slds-var-p-around_small slds-grid slds-gutters slds-align_absolute-center">
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                                    <img src={tempUrl} alt="tempo-logo" style="width:35px" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_center slds-text-heading_medium invert-color">
+                                    {weatherData.temperature}°C
+                                </div>
+                            </div>
+
+                            <!-- Humidity -->
+                            <div data-id="humid-data" class="slds-var-p-around_small slds-grid slds-gutters slds-align_absolute-center">
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                                    <img src={dropUrl} alt="humidity-logo" style="width:35px;" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_center slds-text-heading_medium invert-color">
+                                    {weatherData.humidity}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={showErrorMessage}>
+            <div data-id="error-block" class="slds-m-top_medium">
+                <p class="slds-text-align_center">
+                    <lightning-icon icon-name="utility:error" size="x-small" variant="error"></lightning-icon>
+                    <span style="padding-left:10px">Error fetching the data. Error: {errorMessage}</span>
+                </p>
+            </div>
+        </template>
+
+        <!-- Spinner -->
+        <template if:true={isLoading}>
+            <div class="overlay-box slds-is-absolute slds-grid slds-grid_vertical slds-align_absolute-center slds-text-align_center">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+    </div>
+</template>

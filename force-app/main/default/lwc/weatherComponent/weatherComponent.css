@@ -1,0 +1,26 @@
+:host {
+    --slds-c-spinner-color-foreground: #0176D3;
+}
+
+.overlay-box {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* light semi-transparent white */
+    z-index: 10;
+    border-radius: 0.25rem; /* match lightning-card rounding if needed */
+}
+
+.light-blue-class {
+    background-color: rgba(113, 149, 255, 1);
+    color: white!important;
+}
+.gray-class{
+    background-color: rgb(208, 208, 208);
+    color: black!important;
+}
+.dark-gray-class{
+    background-color: rgba(65, 65, 65, 1);
+    color: white!important;
+}

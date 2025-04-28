@@ -1,0 +1,47 @@
+<template>
+    <div class={cardClass}>
+        <template if:true={forecastData}>
+            <div data-id="forecast-container" class="slds-var-p-around_small slds-grid slds-gutters">
+                <template for:each={forecastData} for:item="dayForecast">
+                    <div key={dayForecast.id}
+                        class="slds-col slds-size_1-of-5 slds-text-align_center">
+                        <span data-id={dayForecast.day}>
+                            <div class="slds-grid slds-grid_vertical slds-align_absolute-center" style="height: 150px;">
+                                <p class="slds-text-title_bold slds-var-m-vertical_xx-small slds-text-align_center">
+                                    {dayForecast.dayShort}
+                                </p>
+                                <img src={dayForecast.weatherLogo}
+                                    class="slds-var-m-vertical_xx-small"
+                                    style="height: 40px;"
+                                    alt="Weather Icon" />
+                            <div class="slds-grid slds-align_absolute-center slds-var-m-vertical_xx-small" style="gap: 4px;">
+                                <img src={tempUrl}
+                                        style="width: 20px;"
+                                        alt="Temp Icon" />
+                                    <span class="slds-text-body_regular invert-color">{dayForecast.temperature}°C</span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={showErrorMessage}>
+            <div data-id="error-block" class="slds-var-m-top_medium">
+                <p class="slds-text-align_center">
+                    <lightning-icon icon-name="utility:error" size="x-small" variant="error"></lightning-icon>
+                    <span style="padding-left:10px">Error fetching the data. Error: {errorMessage}</span>
+                </p>
+            </div>
+        </template>
+
+        <!-- Spinner -->
+        <template if:true={isLoading}>
+            <div class="overlay-box slds-is-absolute slds-grid slds-grid_vertical slds-align_absolute-center slds-text-align_center">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+    </div>
+</template>
