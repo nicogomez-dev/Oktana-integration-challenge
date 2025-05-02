@@ -1,0 +1,27 @@
+{
+  "packageDirectories": [
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": true,
+      "package": "main",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "weather",
+      "default": false,
+      "package": "weather-app",
+      "versionDescription": ""
+    }
+  ],
+  "name": "Weather Component",
+  "namespace": "okt_ngr_weather",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "63.0",
+  "packageAliases": {
+    "weather-app": "0HogL00000008C5SAI"
+  }
+}
